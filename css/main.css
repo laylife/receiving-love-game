@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* CSS Document */
+/*7s
+@keyframes blinky {
+	0%, 9%, 11%, 19%, 21%, 69%, 71%, 100% { transform: scaleY(1) }
+	10%, 20%, 70% { transform: scaleY(0.1) }
+}*/
+
+body{
+	background:#fff;
+	font-size: 20px;
+}
+
+/*.micBtn{display:none;position:absolute;right:30px;top:60px;width:65px;height:65px;background:url(http://mat1.gtimg.com/hn/cp/lol/20190305yhj/mc.png) no-repeat center top;cursor:pointer;z-index: 999;}
+.micBtn.hide{background-position:center -65px;}
+.micBtn.show{background-position:center 0;}*/
+
+
+.item00{ animation-delay: 0s;		-webkit-animation-delay: 0s; 	transition-delay: 0s;	-webkit-transition-delay: 0s;}
+.item01{ animation-delay: 0.15s;	-webkit-animation-delay: 0.15s; 	transition-delay:0.15s;	-webkit-transition-delay: 0.15s;}
+.item02{ animation-delay: 0.3s; 	-webkit-animation-delay:0.3s; 	transition-delay: 0.3s;	-webkit-transition-delay: 0.3s;}
+.item03{ animation-delay:0.45s;	-webkit-animation-delay:0.45s; 	transition-delay: 0.45s;	-webkit-transition-delay: 0.45s;}
+.item04{ animation-delay: 0.6s; 	-webkit-animation-delay: 0.6s; 	transition-delay: 0.6s;	-webkit-transition-delay: 0.6s;}
+.item05{ animation-delay: 0.75s;	-webkit-animation-delay: 0.75s; 	transition-delay:0.75s;	-webkit-transition-delay:0.75s;}
+.item06{ animation-delay: 0.9s; 	-webkit-animation-delay: 0.9s; 	transition-delay: 0.9s;	-webkit-transition-delay: 0.9s;}
+.item07{ animation-delay: 1.05s;	-webkit-animation-delay: 1.05s; 	transition-delay: 1.05s;	-webkit-transition-delay: 1.05s;}
+.item08{ animation-delay: 1.2s; 	-webkit-animation-delay: 1.2s; 	transition-delay: 1.2s;	-webkit-transition-delay: 1.2s;}
+.item09{ animation-delay: 1.35s;	-webkit-animation-delay: 1.35s; 	transition-delay: 1.35s;	-webkit-transition-delay: 1.35s;}
+.item10{ animation-delay: 1.5s;		-webkit-animation-delay: 1.5s; 	transition-delay:1.5s;	-webkit-transition-delay:1.5s;}
+.item11{ animation-delay: 1.7s;		-webkit-animation-delay: 1.7s; 	transition-delay:1.7s;	-webkit-transition-delay:1.7s;}
+.item12{ animation-delay: 2.0s;		-webkit-animation-delay: 2.0s; 	transition-delay:2.0s;	-webkit-transition-delay:2.0s;}
+.item13{ animation-delay: 2.25s;		-webkit-animation-delay: 2.25s; 	transition-delay:2.25s;	-webkit-transition-delay:2.25s;}
+.item14{ animation-delay: 2.5s;		-webkit-animation-delay: 2.5s; 	transition-delay:2.5s;	-webkit-transition-delay:2.5s;}
+.item15{ animation-delay: 4.0s;		-webkit-animation-delay: 4.0s; 	transition-delay:4.0s;	-webkit-transition-delay:4.0s;}
+#fx {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    animation-name: bigIn;
+    animation-duration: 0.7s;
+    -webkit-animation-name: bigIn;
+    -webkit-animation-duration: 0.7s;
+    color: #fff;
+    font-size: 24px;
+    will-change: transform;
+    z-index: 999;
+}
+#fx:before{
+	content: '';
+	position: absolute;
+	right: 30px;
+	top: 10px;
+	width: 33px;
+	height: 44px;
+	background-image: url(http://mat1.gtimg.com/hn/cx/img/shareArr.png);
+	animation: 2s rightUp ease-in-out infinite;
+  	-webkit-animation: 2s rightUp ease-in-out infinite;
+}
+#fx:after{
+	content: '';
+	position: absolute;
+	right: 50px;
+    top: 30px;
+    width: 148px;
+	height: 103px;
+	background-image: url(http://mat1.gtimg.com/hn/cx/img/shareTxt.png);
+}
+
+.rightup-arr{
+	animation: 2s rightUp ease-in-out infinite;
+  	-webkit-animation: 2s rightUp ease-in-out infinite;
+}
+@keyframes rightUp {
+  0% { transform: translate(0); }
+  50% { transform: translate(-20px,20px); }
+}
+@-webkit-keyframes rightUp {
+  0% { -webkit-transform: translate(0); }
+  50% { -webkit-transform: translate(-20px,20px); }
+}
+.dw.dw-ltr{-webkit-transform:scale(1.5,1.5);transform:scale(1.5,1.5)}
+
+.logo{left:20px;top:20px;}
+
+.load_num{font-size:16px;left:0;top:550px;color:#886d38;text-align:center;width:100%;font-weight:bold;}
+#main{
+	left: 50%;
+	margin-left: -320px;
+}
+.page .nr{
+	width: 640px;
+	height: 1040px;
+	min-height: 1040px;
+	position: absolute;
+	top: 50%;
+	margin-top: -520px;
+}
+.btn{
+	cursor: pointer;
+	position: absolute;
+}
+.dialog,.mask{
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0,0,0,0.8);
+	display: none;
+	z-index: 99;
+}
+
+/*loding样式*/
+.loadhint {
+	font-size: 30px;
+	font-weight: 600;
+	color: #164a95;
+	text-align: center;
+	position: absolute;
+	top:40%;
+	width: 100%;
+}
+
+.loadingtxt {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #164a95;
+	height: 10px;
+	border-radius: 4px;
+	width: 20px;
+	transition: all .8s ease-out;
+	-webkit-transition: all .8s ease-out;
+}
+
+.loadBg{
+	width: 200px;
+	position: relative;
+	font-size: 0;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+	height: 40px;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+/*音乐图标*/
+.micBtn{background: url(http://mat1.gtimg.com/hn/lh/99gy/mc.png) no-repeat;
+	right: 15px;
+    top: 100px;
+    height: 30px;
+    width: 30px;
+    position: absolute;z-index: 888;
+    -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+   background-size: 100% 100%;
+   }
+
+.micBtn.show{
+	animation: rotate 800ms infinite;-webkit-animation: rotate 800ms linear infinite;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+}
+.micBtn.hide{background-position:0 0;}
+@keyframes rotate{
+	0%{ 
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes rotate{
+	0%{ 
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.page1{
+	background: url(http://mat1.gtimg.com/hn/cp/lol/20181212aixinjiewa/03.jpg) no-repeat;
+}
+.page1 #canEle{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -520px;
+}
+
+.page1 .socre{
+	background-color: #d2d202;
+	width: 150px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 24px;
+	color: #fff;
+	top: 100px;
+	left: 40px;
+	border-radius: 15px;
+}
+.gameoverOutWrapper{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+.gameOverWrapper{
+	width: 300px;
+	height: 400px;
+	background-color: #fff;
+	left: 50%;
+	margin-left: -150px;
+	top: 50%;
+	margin-top: -200px;
+	border-radius: 10px;
+}
+.gameOverWrapper .title{
+	height: 40px;
+	line-height: 40px;
+	font-size: 24px;
+	text-align: center;
+	padding: 10px 0;
+}
+.gameOverWrapper .subTitle{
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: center;
+	padding: 10px 0;
+	font-weight: bold;
+	color: #61921f;
+}
+.gameOverWrapper .scoreNum{
+	font-size: 80px;
+	text-align: center;
+}
+.gameOverWrapper .restart{
+	width: 150px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    background-color: #61921f;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -75px;
+}

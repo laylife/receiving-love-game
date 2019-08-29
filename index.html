@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class='noScroll' xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta id='viewEle' name="viewport" content="width=640,user-scalable=no,target-densitydpi = device-dpi " />
+<meta name="format-detection" content="telephone = no"/>
+<title>接爱心小游戏</title>
+<link href="css/reset.css" rel="stylesheet" />
+<link href="plugins/animate.min.css" rel="stylesheet" />
+<link href="css/main.css" rel="stylesheet" />
+
+<script src="http://mat1.gtimg.com/hn/cp/lol/20180806mry/plugins/TweenMax.min.js"></script>
+<script src="http://mat1.gtimg.com/hn/lh/preloadjs-0.6.2.min.js" ></script>
+<script src="http://mat1.gtimg.com/hn/lh/easeljs-0.8.1.min.js"></script>
+<script src="https://code.createjs.com/tweenjs-0.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="http://qqmf.daxiangw.com/js/get_wxinfo.v2.4.js" id="WxInfo" wx="wxInfo" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!-- 兼容尺寸 -->
+<div id="main" view-mode="v" view-rotation="false" view-scale="width" view-width="640" view-height='1240' view-align="c">
+<!--主体部分-->
+<div class="content" id="content">
+    <div class="page page0 lazy_load" data-pic=''>
+        <div class="nr">
+			<!--<div class="loadhint">loading</div>-->
+			<div class="loadBg">
+				<!--<div class="loadingtxt">0%</div>-->
+				<!--0%-->
+			</div>
+        </div>
+    </div>
+    <div class="page page1">
+    	<canvas id="canEle" width="640" height="1040"></canvas>
+    	<!--<span class="abso againBtn">再玩一次</span>-->
+    	<span class="abso socre">0</span>
+    </div>
+    
+    <!--游戏结束弹窗-->
+    <div class="abso gameoverOutWrapper">
+    	<div class="abso gameOverWrapper">
+    	<div class="title">
+	    		游戏结束
+	    	</div>
+	    	<div class="subTitle">
+	    		最终得分
+	    	</div>
+	    	<div class="scoreNum">
+	    		0
+	    	</div>
+	    	
+	    	<span class="abso restart">重新开始</span>
+	    </div>
+    </div>
+    
+</div>
+<div class="micBtn" id="micBtn"><span class="cen boxSizing"></span></div>
+<!--箭头滑动提示-->
+<!--<img class="pt-page-moveIconUp" id='upJt' src="http://mat1.gtimg.com/hn/lh/y18/youyi/arr.png" style="width: 50px;">-->
+<!--end 主体部分-->
+
+
+<!--分享提示-->
+<div id="fx"> </div>
+<div id="tipsBox" close=true><span class="abso">提示文案</span></div>
+
+<div class="dialog vdBox">
+	<div id="bigIf">
+		
+	</div>
+    <span class="btn close"></span>
+</div>
+
+
+<div class="mask-white-dialog" id="YDUI_LOADING">
+  <div class="m-loading">
+    <div class="loading-hd">
+      <div class="loading-leaf loading-leaf-0"></div>
+      <div class="loading-leaf loading-leaf-1"></div>
+      <div class="loading-leaf loading-leaf-2"></div>
+      <div class="loading-leaf loading-leaf-3"></div>
+      <div class="loading-leaf loading-leaf-4"></div>
+      <div class="loading-leaf loading-leaf-5"></div>
+      <div class="loading-leaf loading-leaf-6"></div>
+      <div class="loading-leaf loading-leaf-7"></div>
+      <div class="loading-leaf loading-leaf-8"></div>
+      <div class="loading-leaf loading-leaf-9"></div>
+      <div class="loading-leaf loading-leaf-10"></div>
+      <div class="loading-leaf loading-leaf-11"></div>
+    </div>
+    <p class="loading-txt">正在上传中...</p>
+  </div>
+</div>
+
+<!--<div class="coy">
+	湘ICP备13002230号
+</div>-->
+
+
+</div>
+<script src="//mat1.gtimg.com/hn/cx/js/video.v1.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://mat1.gtimg.com/hn/cp/lol/js/jquery-2.1.1.min.js"></script>
+<script language="javascript" src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>
+<!--<script src="plugins/jquery-2.1.1.min.js"></script>-->
+<script src="plugins/hammer.min.js"></script>
+<script src="plugins/TweenMax.min.js"></script>
+<!--页面切换动画-->
+<script src="js/jsEasy.js" defer='defer'></script>
+
+<script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="//qqmf.daxiangw.com/js/js-sdk_mta.v1.1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+			var game = new Game(".socre");
+			game.init();
+			$(".restart").click(function(){
+				$(this).parent().parent().fadeOut();
+				var game = new Game(".socre");
+				game.init();
+			})
+		</script>
+
+
+
+</body>
+</html>
+
