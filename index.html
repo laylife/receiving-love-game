@@ -34,6 +34,7 @@
     	<canvas id="canEle" width="640" height="1040"></canvas>
     	<!--<span class="abso againBtn">再玩一次</span>-->
     	<span class="abso socre">0</span>
+    	<span class="abso time">30</span>
     </div>
     
     <!--游戏结束弹窗-->
@@ -113,11 +114,11 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script src="//qqmf.daxiangw.com/js/js-sdk_mta.v1.1.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-			var game = new Game(".socre");
+			var game = new Game(".socre",'.time',60);
 			game.init();
 			$(".restart").click(function(){
 				$(this).parent().parent().fadeOut();
-				var game = new Game(".socre");
+				game = new Game(".socre",'.time',60);
 				game.init();
 			})
 		</script>

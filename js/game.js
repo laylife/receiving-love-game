@@ -1,8 +1,9 @@
 ;(function(){
-				function Game(scoreSelector){
+				function Game(scoreSelector,timeSelector,timeNum){
 				this.speed = 5;//默认速度
 				this.score = 0;//默认分数
-				this.scoreEl = document.querySelector(scoreSelector);
+				this.scoreEl = document.querySelector(scoreSelector);//分数选择器
+				this.time = document.querySelector(timeSelector);//倒计时
 				this.monster = [{
 			    	x: this.myRandom(35,160),
 			    	y: -50,
@@ -66,7 +67,7 @@
 			    	speed: this.speed,
 			    	type: 0
 			    }
-			    ];
+			    ];//定义掉落物体品每次10个
 			    this.canEle = document.getElementById("canEle");//canvas画布
 			    this.canW = 640;
 			    this.canH = 1040;
@@ -75,6 +76,8 @@
 			    this.score10 = new createjs.Bitmap("img/socre10.png");
 			    this.man = new createjs.Bitmap("img/lanzi_boy2.png");;
 			    this.mon = [];
+			    this.countdown = null;
+			    this.timenum = timeNum || 30;
 			}
 			
 			Game.prototype = {
@@ -91,6 +94,7 @@
 	    			this.drawMan();
 	    			this.drawScore10();
 	    			this.drawMonster();
+	    			this.countDown(this.timenum)
 				},
 				myRandom: function(min,max){
 			    	var cho = max - min + 1;
@@ -118,6 +122,18 @@
 			   		this.score10.y = 40;
 			   		this.score10.alpha = 0;
 			   		this.mancontainer.addChild(this.score10);
+			   	},
+			   	countDown: function(num){
+			   		var that = this;
+			   		num -= 1;
+			   		if(num < 0){
+			   			that.gameOver();
+			   		}else{
+			   			that.countdown = setTimeout(function () {
+		                    that.countDown(num);
+		                    that.time.innerText = num + '秒';
+		                }, 1000);
+			   		}
 			   	},
 			   	drawMonster: function(){
 			   		var i, len = this.monster.length;
@@ -238,6 +254,8 @@
 	     			this.stage.update();
 	     			$(".gameoverOutWrapper").fadeIn();
 	     			$(".scoreNum").text(this.score);
+	     			clearTimeout(this.countdown);
+//	     			this.countdown = null;
 	     			this.speed = 5;//默认速度
 					this.score = 0;//默认分数
 

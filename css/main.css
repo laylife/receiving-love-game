@@ -204,7 +204,7 @@ body{
 	margin-top: -520px;
 }
 
-.page1 .socre{
+.page1 .socre,.page1 .time{
 	background-color: #d2d202;
 	width: 150px;
 	height: 50px;
@@ -215,6 +215,9 @@ body{
 	top: 100px;
 	left: 40px;
 	border-radius: 15px;
+}
+.page1 .time{
+	left: 450px;
 }
 .gameoverOutWrapper{
 	width: 100%;
